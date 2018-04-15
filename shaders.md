@@ -4,3 +4,25 @@
 * 并行地计算每一个像素点，没有行列遍历的 for 循环
 * 每个 pipe 对其它 pipe 是**不可见**的，并且也是**无记忆**的。
 * 编写 shader 相当于编写**针对每个不同位置的通用函数**，故开发调试难度均较大。
+
+### GLSL
+
+GLSL (OpenGL Shader Language) Hello World:
+
+``` glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+void main() {
+    gl_FragColor = vec4(1.0, 0.0, 1.0, 0.0);
+}
+```
+
+* SL 有单独的 `main` 函数。
+* 最终像素颜色赋值给 `gl_FragColor`。
+* 支持内建*变量*、*函数*和*类型*。
+* `vec4` 类型参数被*归一化*了（范围由 `0.0` 到 `1.0`）。
+* 预处理器宏，预编译时收集所有 `#define`，再检查 `#ifdef` 与 `#ifndef` 条件之间代码是否执行。在移动设备与浏览器上编译时 `GL_ES` 一般适用。
+* 浮点类型对 shader 非常重要，我们需要关注*精度*。为平衡精度和渲染速度，可以选择不同 precision。
+* GLSL 没有自动类型转换，`vec3(0, 0, 0)` 输入整型会报错。
