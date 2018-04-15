@@ -34,4 +34,4 @@ void main() {
 
 常用的 uniform 包括屏幕分辨率、当前时间、鼠标位置等。它们类似于绘制新画面的基本 seed，例如我们可以通过时间因子加快或减慢动画速度。
 
-`gl_FragCoord` 让我们定位到某一个点。`gl_FragCoord.xy / u_resolution` 可得到归一化后的 xy 坐标（原点在左下角，与 canvas 不同）。
+`gl_FragCoord` 让我们定位到某一个点。`gl_FragCoord.xy / u_resolution` 可得到归一化后的 xy 坐标（原点在左下角，与 canvas 不同）。由于其取值在每个点均不同，其类型为 *varing* 而非 uniform。
