@@ -40,3 +40,12 @@ void main() {
 * 通过封装后 glslCanvas 打开。
 * 使用 The Book of Shaders 在线编辑器。
 * Three.js、Processing 与 openFrameworks 均支持直接运行 `.frag` 文件（需要若干胶水代码提供 `u_time` 等 uniform）。
+
+### 造型函数
+* `y = st.x` 相当于线性插值。
+* `pow(st.x, 5.0)` 对应指数形式。
+* `step(threshold, x)` 对阈值以下返回 0.0，阈值以上返回 1.0。
+* `smoothstop` 对应的中间插值较平滑。
+* `sin` 和 `cos` 三角函数可模拟 bouncing 效果（取 abs 后，不准确）。
+* 二次与三次贝塞尔曲线非常有用，但需自行编码。
+* 可以用 macOS 上的 Grapher 观察曲线形态。
