@@ -18,3 +18,11 @@ rm -rf node_modules
 npm install --save-dev xxx@a.b.c
 npm install
 ```
+
+## Update Package Lock
+
+> `cnpm` does not support lock.
+
+```
+npm --registry=https://registry.npm.taobao.org i
+```
