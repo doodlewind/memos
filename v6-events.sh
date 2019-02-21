@@ -76,5 +76,5 @@ editor-element-picker
 
 for i in "${array[@]}"
 do
-  find . -type f -not -path "*/node_modules/*" -print | xargs grep "\'$i\'"
+  find . -type f -not -path "*/node_modules/*" -not -path "*dist*" -print | xargs grep "\'$i\'"
 done
