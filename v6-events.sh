@@ -65,6 +65,8 @@ transform.dblclick
 transform.drag
 
 # 对外事件，还需要注意 load 与 editor.change 事件
+editor.change
+load
 editor-error
 editor-layout-loaded
 layout.load
